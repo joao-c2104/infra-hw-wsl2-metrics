@@ -3,7 +3,7 @@
 Repositório público com os artefatos técnicos, dados brutos e scripts utilizados na medição de desempenho da infraestrutura de hardware para a disciplina da CESAR School.
 
 ## Estrutura do Repositório
-* `/scripts`: Ferramentas em Python e Shell usadas para estressar a CPU (sysbench) e a hierarquia de memória (mbw).
+* `/scripts`: Ferramentas em Python e usadas para estressar a CPU e a hierarquia de memória.
 * `/dados_brutos`: Logs originais extraídos do terminal (saídas de I/O, contadores de IRQ e vmstat).
 * `/imagens`: Gráficos gerados que comprovam o gargalo de largura de banda e limite de I/O no disco.
 

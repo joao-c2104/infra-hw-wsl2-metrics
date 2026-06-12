@@ -9,7 +9,7 @@ Repositório público com os artefatos técnicos, dados brutos e scripts utiliza
 
 ## Hardware Inspecionado
 * **CPU:** Intel Core i5-13420H (12 Threads)
-* **RAM (Hospedeiro):** [Inserir total real] / **RAM (WSL2):** Limitada a 3.7 GiB
+* **RAM (Hospedeiro):** 8,0 GB / **RAM (WSL2):** Limitada a 3.7 GiB
 * **SO:** Ubuntu 24.04 LTS sobre Windows 11 (WSL2)
 
 **Autor:** João Carlos Vasconcelos de Gusmão

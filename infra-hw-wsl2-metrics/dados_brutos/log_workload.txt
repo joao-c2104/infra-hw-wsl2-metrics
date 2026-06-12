@@ -1,0 +1,42 @@
+======================================================================
+WORKLOAD COMPLETO — Profiling Integrado
+======================================================================
+CPU:    6 núcleos / 12 threads
+RAM:    3.7 GB
+SO:     posix
+======================================================================
+
+[1/3] Fase CPU-BOUND — multiplicação de matrizes pequenas
+       (dados cabem em L2/L3, exercita pipeline e ALU)
+
+[2/3] Fase MEMORY-BOUND — varredura de buffer 1 GB
+       (sai de qualquer L3, exercita banda de RAM)
+
+[3/3] Fase I/O-BOUND — leitura/escrita em disco
+       (exercita SSD/HDD via PCIe ou SATA)
+
+======================================================================
+RESULTADOS POR FASE
+======================================================================
+  {'fase': 'CPU-bound', 'duracao_s': 8.000056008000684, 'iteracoes': 12801, 'cpu_pct': 99.9, 'throughput': 1600.1137976031662}
+  {'fase': 'Memory-bound', 'duracao_s': 8.032268771999952, 'iteracoes': 151, 'bandwidth_gbs': 18.799171726720314}
+  {'fase': 'I/O-bound', 'duracao_s': 8.001516837000054, 'operacoes': 506800, 'throughput_mbs': 247.41402665625444}
+
+======================================================================
+INFERÊNCIA DE GARGALO
+======================================================================
+  CPU:           1600.1 multiplicações/s
+  Memória:        18.80 GB/s de varredura (subestimativa — ver mbw)
+  I/O:            247.4 MB/s de escrita
+  Cores >50% no fim: 0/12
+
+⚠ Provável SSD SATA. Um NVMe daria ganho considerável.
+✓ RAM com banda saudável.
+⚠ Apenas 0/12 núcleos saturados — este workload é single-thread. Há paralelismo a explorar.
+======================================================================
+
+PRÓXIMOS PASSOS:
+  1. Compare seus números com uma execução anterior sua.
+  2. Identifique a maior diferença e proponha uma explicação.
+  3. Refine sua resposta às perguntas reflexivas do bloco 5.
+
